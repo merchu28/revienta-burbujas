@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revienta Burbujas Premiadas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>¡Revienta las Burbujas y Gana!</h1>
+        <p class="attempts">Intentos restantes: <span id="intentos-restantes">3</span></p>
+
+        <div id="bubble-area">
+            </div>
+    </div>
+
+    <div id="modal-resultado" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-titulo">¡Felicidades!</h2>
+            <p id="modal-mensaje"></p>
+            <div id="premio-info">
+                <p>Tu código de descuento único es:</p>
+                <code id="codigo-premio"></code>
+            </div>
+            <button id="reiniciar-juego">Jugar de Nuevo / Volver al Inicio</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #74ccf4, #5c9cfa); /* Fondo azul de agua */
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+#bubble-area {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border: 2px solid #5c9cfa;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    background-color: #e0f7fa;
+}
+
+/* Estilo de la burbuja */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s;
+    /* Efecto de burbuja */
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(100, 181, 246, 0.8));
+    box-shadow:  inset 0 0 15px rgba(255, 255, 255, 0.5),
+                0 0 10px rgba(100, 181, 246, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0; /* Ocultar contenido hasta reventar */
+    color: white;
+    font-weight: bold;
+}
+
+.bubble:hover {
+    transform: scale(1.1); /* Ligero aumento al pasar el ratón */
+}
+
+/* Animación al explotar */
+.popped {
+    animation: pop 0.3s forwards;
+    pointer-events: none; /* Deshabilitar clics después de reventar */
+    opacity: 0;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#codigo-premio {
+    display: block;
+    background-color: #eee;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: #d9534f;
+}
+
+#reiniciar-juego {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
